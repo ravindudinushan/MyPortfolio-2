@@ -14,8 +14,16 @@ const Header = () => {
                     RD <span className="text-accent">.</span>
                 </h1>
             </Link>
-            {/* Desktop Nav */}
-            <Nav />
+            {/* Desktop nav & Hire me button*/}
+            <div className="hidden xl:flex item-center gap-8">
+              <Nav />
+              <Link href="/contact">
+                <Button>Hire me</Button>
+              </Link>
+            </div>
+
+            {/* Mobile nav */}
+            <div className="xl:hidden">mobile nav</div>
         </div>
     </header>
   )
