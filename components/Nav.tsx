@@ -1,5 +1,6 @@
 "use client";
 
+import { link } from "fs";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -27,10 +28,18 @@ const links = [
 ];
 
 const Nav = () => {
+  const pathname = usePathname;
+  console.log(pathname);
   return (
-    <div>
-      Desktop Nav
-    </div>
+    <nav className="flex gap-8">
+      {links.map((link, index) => {
+        return(
+          <Link href={link.path} key={index} className={``}>
+            {link.name}
+          </Link>
+        );
+      })}
+    </nav>
   )
 }
 
